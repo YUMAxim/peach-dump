@@ -2,7 +2,7 @@
 <label>募集タイトル</label>
 <input type="text" name="title" required value="{{ $request->title ?? old('title') }}">
 
-<label>募集内容 詳細</label>
+<label>募集内容の詳細</label>
 <textarea name="body" required rows="16" placeholder="募集内容の詳細を入力してください">{{ $request->body ?? old('body') }}</textarea>
 
 <label>カテゴリー</label>
@@ -58,4 +58,4 @@
 <label>納品希望日</label>
 {{Form::select('deadline', ['' => '', '' => '', '' => ''])}}
 
-{{ Form::submit('送信') }}
+{{ Form::submit('確認画面へ') }}

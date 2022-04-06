@@ -6,7 +6,7 @@
 
 @section('content')
     <div>
-        <form action="{{ route('requests.store') }}" method="POST">
+        <form action="{{ route('requests.confirm') }}" method="POST">
             <h3>募集作成フォーム</h3>
             @include('requests.form')
         </form>

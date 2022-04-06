@@ -20,16 +20,17 @@ return new class extends Migration
             $table->bigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
             $table->integer('budget');
-            $table->(my_role);
-            $table->(collaborator_role);
+            $table->integer('my_role');
+            $table->integer('collaborator_role');
             $table->integer('page');
             $table->integer('book_size');
-            $table->(file_format);
-            $table->(desired_color_impression);
-            $table->(desired_content_impression);
-            $table->(file_attachment);
-            $table->(application_deadline);
-            $table->(deadline);
+            $table->integer('file_format');
+            $table->integer('desired_color_impression');
+            $table->integer('desired_content_impression');
+            // Review
+            $table->file('file_attachment');
+            $table->date('application_deadline');
+            $table->date('deadline');
             $table->timestamps();
         });
     }

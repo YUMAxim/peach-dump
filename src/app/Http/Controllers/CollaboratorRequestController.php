@@ -68,6 +68,18 @@ class CollaboratorRequestController extends Controller
     }
 
     /**
+     * Confirm the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function confirm(Request $request)
+    {
+        $inputs = $request->all();
+        return view('requests.confirm', ['inputs' => $inputs,]);
+    }
+
+
+    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request

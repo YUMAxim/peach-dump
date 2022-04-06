@@ -15,5 +15,5 @@ use App\Http\Controllers\CollaboratorRequestController;
 
 
 Route::get('/', [CollaboratorRequestController::class, 'index'])->name('requests.index');
-// Route::get('/create', [CollaboratorRequestController::class, 'create'])->name('collaborator_requests.create');
+Route::post('/comfirm', [CollaboratorRequestController::class, 'confirm'])->name('requests.confirm');
 Route::resource('requests', CollaboratorRequestController::class)->except(['index']);
