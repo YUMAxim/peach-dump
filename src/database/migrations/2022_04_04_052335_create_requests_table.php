@@ -27,10 +27,10 @@ return new class extends Migration
             $table->integer('file_format');
             $table->integer('desired_color_impression');
             $table->integer('desired_content_impression');
-            // Review
-            $table->file('file_attachment');
-            $table->date('application_deadline');
-            $table->date('deadline');
+            // // Review
+            // $table->file('file_attachment');
+            // $table->date('application_deadline');
+            // $table->date('deadline');
             $table->timestamps();
         });
     }

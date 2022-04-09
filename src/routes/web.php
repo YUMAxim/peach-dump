@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\CollaboratorRequestController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,7 +13,16 @@ use App\Http\Controllers\CollaboratorRequestController;
 |
 */
 
+Route::get('/', function () {
+    return view('welcome');
+});
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
 
 Route::get('/', [CollaboratorRequestController::class, 'index'])->name('requests.index');
 Route::post('/comfirm', [CollaboratorRequestController::class, 'confirm'])->name('requests.confirm');
 Route::resource('requests', CollaboratorRequestController::class)->except(['index']);
+
+require __DIR__.'/auth.php';
